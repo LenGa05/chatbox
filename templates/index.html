@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Casanova Electrical Chat Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}" />
+  </head>
+  <body>
+    <main class="chat-shell">
+      <section class="chat-panel">
+        <header class="chat-header">
+          <h1>Casanova Electrical Virtual Assistant</h1>
+          <p>
+            Ask questions about our services, request an estimate, or find out how to
+            reach our team. For emergencies please call us directly.
+          </p>
+        </header>
+        <ul id="chat-log" class="chat-log" aria-live="polite"></ul>
+        <form id="chat-form" class="chat-form" autocomplete="off">
+          <label class="sr-only" for="chat-input">Ask a question</label>
+          <input
+            id="chat-input"
+            name="message"
+            class="chat-input"
+            type="text"
+            placeholder="How can Casanova Electrical help you today?"
+            required
+            minlength="1"
+            maxlength="400"
+          />
+          <button type="submit" class="chat-submit">Send</button>
+        </form>
+      </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/chat.js') }}" defer></script>
+  </body>
+</html>
