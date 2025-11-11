@@ -1,1 +1,31 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Environment variables
+.env
+
+# VSCode and IDE settings
+.vscode/
+.idea/
+
+# macOS and system files
+.DS_Store
+
+# Pytest cache
+.pytest_cache/
+
+# Node/npm if you ever add frontend dependencies
+node_modules/
+
+# Flask cache / logs
+instance/
+*.log
 
