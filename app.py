@@ -1,12 +1,12 @@
-"""Flask web application exposing the Casanova Electrical chatbot."""
+"""Flask web application exposing the Mora Plumbing LLC website."""
 from __future__ import annotations
 from flask import Flask, jsonify, render_template, request
-from chatbot import ElectricCompanyChatBot
+from chatbot import PlumbingCompanyChatBot
 
 def create_app() -> Flask:
     """Create and configure the Flask application."""
     app = Flask(__name__)
-    bot = ElectricCompanyChatBot()
+    bot = PlumbingCompanyChatBot()
 
     @app.get("/")
     def index() -> str:

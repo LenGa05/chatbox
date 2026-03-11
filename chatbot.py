@@ -1,4 +1,4 @@
-"""Casanova Electrical chatbot logic and optional CLI entrypoint."""
+"""Mora Plumbing LLC chatbot logic and optional CLI entrypoint."""
 from __future__ import annotations
 import textwrap
 from dataclasses import dataclass
@@ -9,50 +9,46 @@ class Intent:
     keywords: set[str]
     response: str
 
-class ElectricCompanyChatBot:
-    """Rule-based chatbot tuned for Casanova Electrical."""
+class PlumbingCompanyChatBot:
+    """Rule-based chatbot tuned for Mora Plumbing LLC."""
 
     def __init__(self) -> None:
         self._intents: list[Intent] = [
             Intent(
-                keywords={"outage", "emergency", "urgent", "no power", "sparks"},
+                keywords={"leak", "burst", "emergency", "water damage"},
                 response=textwrap.dedent("""
-                    If you're facing an urgent electrical issue, please call Casanova
-                    Electrical right away and then submit the emergency details at
-                    https://casanovaelectrical.com/contact/. We'll dispatch a licensed
-                    electrician as quickly as possible.
+                    If you have a plumbing emergency, call Mora Plumbing LLC right away
+                    at (419) 555-0123. We serve homes and businesses throughout the
+                    Paulding area and can help with urgent leaks and pipe issues.
                 """).strip(),
             ),
             Intent(
-                keywords={"quote", "estimate", "pricing", "cost", "bid"},
+                keywords={"quote", "estimate", "pricing", "cost", "service"},
                 response=textwrap.dedent("""
-                    We'd be happy to prepare a customized estimate. Share the project
-                    details through https://casanovaelectrical.com/contact/ and our
-                    office will follow up with pricing and scheduling options.
+                    We'd be glad to provide an estimate. Share your plumbing issue,
+                    location, and preferred schedule, and our team will follow up with
+                    transparent pricing.
                 """).strip(),
             ),
             Intent(
-                keywords={"services", "panel", "lighting", "ev", "install"},
+                keywords={"drain", "clog", "toilet", "sink", "sewer"},
                 response=textwrap.dedent("""
-                    Casanova Electrical handles residential and commercial work
-                    including panel upgrades, lighting design, EV charger installs,
-                    and preventive maintenance. Let us know what you need at
-                    https://casanovaelectrical.com/services/.
+                    We handle clogged drains, sewer backups, and fixture blockages.
+                    Mora Plumbing LLC uses safe, effective methods to restore flow fast.
                 """).strip(),
             ),
             Intent(
-                keywords={"license", "insured", "bonded", "certified"},
+                keywords={"water heater", "tankless", "install", "replace"},
                 response=textwrap.dedent("""
-                    Our electricians are fully licensed, insured, and code compliant.
-                    If you need documentation for a permit or project, contact the
-                    office team via https://casanovaelectrical.com/contact/.
+                    We install and service both standard and tankless water heaters.
+                    If your system is leaking or not heating properly, we can help.
                 """).strip(),
             ),
         ]
         self._fallback_response = (
-            "I'm here to help! Please share a few details about your project or use "
-            "https://casanovaelectrical.com/contact/ to reach the Casanova Electrical "
-            "team directly."
+            "Thanks for reaching out to Mora Plumbing LLC. Tell us a little about your "
+            "plumbing project in the Paulding area, and we'll point you in the right "
+            "direction."
         )
 
     def get_response(self, message: str) -> str:
@@ -68,23 +64,22 @@ class ElectricCompanyChatBot:
 
 def run_chat() -> None:
     """Launch the chatbot in interactive console mode."""
-    bot = ElectricCompanyChatBot()
-    print("Welcome to Casanova Electrical's virtual assistant! Type 'quit' to exit.\n")
+    bot = PlumbingCompanyChatBot()
+    print("Welcome to Mora Plumbing LLC's virtual assistant! Type 'quit' to exit.\n")
 
     while True:
         try:
             user_message = input("You: ")
         except (EOFError, KeyboardInterrupt):
-            print("\nThanks for chatting with Casanova Electrical. Goodbye!")
+            print("\nThanks for chatting with Mora Plumbing LLC. Goodbye!")
             break
 
         if user_message.strip().lower() in {"quit", "exit"}:
-            print("Thanks for chatting with Casanova Electrical. Goodbye!")
+            print("Thanks for chatting with Mora Plumbing LLC. Goodbye!")
             break
 
         response = bot.get_response(user_message)
-        print(f"CasanovaBot: {response}\n")
+        print(f"MoraBot: {response}\n")
 
 if __name__ == "__main__":
     run_chat()
-

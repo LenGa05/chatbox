@@ -61,7 +61,7 @@ chatForm.addEventListener('submit', sendMessage);
 
 appendMessage({
   author: 'Bot',
-  text: "Hi! I'm the Casanova Electrical assistant. How can I help you today?",
+  text: "Hi! I'm the Mora Plumbing assistant. How can I help you today?",
   tone: 'bot',
 });
 
