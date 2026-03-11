@@ -3,37 +3,81 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Casanova Electrical Chat Assistant</title>
+    <title>Mora Plumbing LLC | Paulding Area Plumbing Services</title>
+    <meta
+      name="description"
+      content="Mora Plumbing LLC provides reliable residential and light commercial plumbing services across the Paulding area."
+    />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}" />
   </head>
   <body>
-    <main class="chat-shell">
-      <section class="chat-panel">
-        <header class="chat-header">
-          <h1>Casanova Electrical Virtual Assistant</h1>
-          <p>
-            Ask questions about our services, request an estimate, or find out how to
-            reach our team. For emergencies please call us directly.
-          </p>
-        </header>
-        <ul id="chat-log" class="chat-log" aria-live="polite"></ul>
-        <form id="chat-form" class="chat-form" autocomplete="off">
-          <label class="sr-only" for="chat-input">Ask a question</label>
-          <input
-            id="chat-input"
-            name="message"
-            class="chat-input"
-            type="text"
-            placeholder="How can Casanova Electrical help you today?"
-            required
-            minlength="1"
-            maxlength="400"
-          />
-          <button type="submit" class="chat-submit">Send</button>
-        </form>
+    <header class="hero">
+      <nav class="top-nav">
+        <span class="brand">Mora Plumbing LLC</span>
+        <a href="#contact" class="nav-cta">Get a Free Estimate</a>
+      </nav>
+      <div class="hero-content">
+        <p class="eyebrow">Serving the Paulding Area</p>
+        <h1>Trusted Plumbing Solutions for Your Home and Business</h1>
+        <p>
+          From leak repairs to water heater installations, Mora Plumbing LLC delivers
+          honest service, clear communication, and quality workmanship you can count on.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="tel:+14195550123">Call Now: (419) 555-0123</a>
+          <a class="button secondary" href="#services">View Services</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="services" class="section">
+        <h2>Our Plumbing Services</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Leak Detection & Repair</h3>
+            <p>Fast diagnosis and repair for hidden leaks, dripping fixtures, and broken pipes.</p>
+          </article>
+          <article class="card">
+            <h3>Drain Cleaning</h3>
+            <p>Clogged sink, shower, or main line? We clear tough blockages safely and efficiently.</p>
+          </article>
+          <article class="card">
+            <h3>Water Heater Service</h3>
+            <p>Installation, maintenance, and repair for both tank and tankless water heaters.</p>
+          </article>
+          <article class="card">
+            <h3>Fixture Installation</h3>
+            <p>Upgrade kitchens and bathrooms with professionally installed faucets, toilets, and sinks.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <h2>Why Paulding Chooses Mora Plumbing LLC</h2>
+        <ul class="feature-list">
+          <li>Locally focused service throughout the Paulding area</li>
+          <li>Prompt scheduling and dependable arrival windows</li>
+          <li>Upfront pricing with no surprise fees</li>
+          <li>Friendly, professional workmanship on every visit</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2>Request Service</h2>
+        <p>
+          Need help with a plumbing issue? Call us today or send us your details and we will
+          get back to you as soon as possible.
+        </p>
+        <div class="contact-actions">
+          <a class="button primary" href="tel:+14195550123">(419) 555-0123</a>
+          <a class="button secondary" href="mailto:service@moraplumbingllc.com">service@moraplumbingllc.com</a>
+        </div>
       </section>
     </main>
-    <script src="{{ url_for('static', filename='js/chat.js') }}" defer></script>
+
+    <footer class="site-footer">
+      <p>© {{ 2026 }} Mora Plumbing LLC · Proudly serving the Paulding area.</p>
+    </footer>
   </body>
 </html>
-
